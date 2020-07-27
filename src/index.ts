@@ -11,52 +11,55 @@ export enum SpotifyActionKey {
 }
 
 export default class Spotify implements SpotterPlugin {
-  actions = [
-    {
-      key: SpotifyActionKey.Previous,
-      title: 'Previous',
-      subtitle: 'Spotify Previous track',
-      image: '',
-    },
-    {
-      key: SpotifyActionKey.Next,
-      title: 'Next',
-      subtitle: 'Spotify Next track',
-      image: '',
-    },
-    {
-      key: SpotifyActionKey.Pause,
-      title: 'Pause',
-      subtitle: 'Spotify Pause',
-      image: '',
-    },
-    {
-      key: SpotifyActionKey.Play,
-      title: 'Play',
-      subtitle: 'Spotify Play',
-      image: '',
-    },
-    {
-      key: SpotifyActionKey.Mute,
-      title: 'Mute',
-      subtitle: 'Spotify Mute',
-      image: '',
-    },
-    {
-      key: SpotifyActionKey.Unmute,
-      title: 'Unmute',
-      subtitle: 'Spotify Unmute',
-      image: '',
-    },
-    {
-      key: SpotifyActionKey.TogglePlayPause,
-      title: 'Toggle play/pause',
-      subtitle: 'Spotify Toggle play/pause',
-      image: '',
-    },
-  ];
 
   constructor(private api: SpotterApi) {}
+
+  get actions() {
+    return [
+      {
+        key: SpotifyActionKey.Previous,
+        title: 'Previous',
+        subtitle: 'Spotify Previous track',
+        image: '',
+      },
+      {
+        key: SpotifyActionKey.Next,
+        title: 'Next',
+        subtitle: 'Spotify Next track',
+        image: '',
+      },
+      {
+        key: SpotifyActionKey.Pause,
+        title: 'Pause',
+        subtitle: 'Spotify Pause',
+        image: '',
+      },
+      {
+        key: SpotifyActionKey.Play,
+        title: 'Play',
+        subtitle: 'Spotify Play',
+        image: '',
+      },
+      {
+        key: SpotifyActionKey.Mute,
+        title: 'Mute',
+        subtitle: 'Spotify Mute',
+        image: '',
+      },
+      {
+        key: SpotifyActionKey.Unmute,
+        title: 'Unmute',
+        subtitle: 'Spotify Unmute',
+        image: '',
+      },
+      {
+        key: SpotifyActionKey.TogglePlayPause,
+        title: 'Toggle play/pause',
+        subtitle: 'Spotify Toggle play/pause',
+        image: '',
+      },
+    ];
+  } 
 
   onSelectAction(action: SpotterAction) {
     switch (action.key) {
